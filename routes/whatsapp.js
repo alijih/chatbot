@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const clientCelDB=require('../models/clientsCelDB.js')
+const NewAcounts=0;
 
 ///////////////////////////////LIST USER AND FIND FUNCTION 
 async function FindCel(Cel){//Cel= "549343XXXXXXX@c.us"
@@ -50,7 +51,15 @@ client.on('message', message => {
                if (!isNaN(message.body)){message.body=message.body.toString()}
                  switch (message.body.toLowerCase().replace(/\s/g, "")){ 
                  case "1":
-                   //HACER QUE NOS LLEGUE AL NUMERO QUE PONGAMOS 1 DE CADA 5, LOS OTROS 2 QUE ME LOS ENVIE A MI NUMERO 
+                   /*
+                   NewAcounts++;
+                   if (NewAcounts % 5 === 0) {
+                        client.sendMessage("5493436118054@c.us", `El número ${message.from}, desea crearse una cuenta nueva` ); Me aviso a mi!
+                        } else {
+                        client.sendMessage("5493436222320@c.us", `El número ${message.from}, desea crearse una cuenta nueva` ); Me aviso a mi!
+                      }
+                   
+                   */
                    client.sendMessage(message.from, "  Muy bién, se contactará contigo a la brevedad nuestro cajero oficial!!.  \n  Muchas gracias por elegirnos.  \n  Por mas información recuerda visitar nuestro sitio web donde publicamos próximos sorteos y promociones en 'https: PROXIMAMENTE'" );
                    client.sendMessage("5493436222320@c.us", `El número ${message.from}, desea crearse una cuenta nueva` );
                    break;
