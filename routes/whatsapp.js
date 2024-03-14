@@ -4,6 +4,7 @@ const clientCelDB=require('../models/clientsCelDB.js')
 
 ///////////////////////////////LIST USER AND FIND FUNCTION 
 async function FindCel(Cel){//Cel= "549343XXXXXXX@c.us"
+  console.log("numero del grupo: ", Cel)
   let partes = Cel.split('@');
   let numero=partes[0];//I divide up to "@"
   const cel = await clientCelDB.findOne({number:numero});
