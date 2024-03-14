@@ -54,9 +54,9 @@ client.on('message', message => {
                    /*
                    NewAcounts++;
                    if (NewAcounts % 5 === 0) {
-                        client.sendMessage("5493436118054@c.us", `El número ${message.from}, desea crearse una cuenta nueva` ); Me aviso a mi!
+                        client.sendMessage("5493436118054@c.us", `El número ${message.from}, desea crearse una cuenta nueva` ); PRUEBA 1
                         } else {
-                        client.sendMessage("5493436222320@c.us", `El número ${message.from}, desea crearse una cuenta nueva` ); Me aviso a mi!
+                        client.sendMessage("5493436222320@c.us", `El número ${message.from}, desea crearse una cuenta nueva` ); PRUEBA 2
                       }
                    
                    */
