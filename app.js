@@ -4,6 +4,7 @@ const cors= require('cors');
 const app = express()
 const config = require('./config.js');
 
+
 app.get('/', (req, res) => {
   res.send('Hello TuSuerte!')
 })
