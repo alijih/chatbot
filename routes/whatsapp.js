@@ -3,7 +3,7 @@ const router = express.Router();
 
 const clientCelDB = require('../models/clientsCelDB.js')
 const NewAcounts = 0;
-
+//desde pc mesa prueba
 ///////////////////////////////LIST USER AND FIND FUNCTION 
 async function FindCel(Cel) {//Cel= "549343XXXXXXX@c.us"
   console.log("numero del grupo: ", Cel)
