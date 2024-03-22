@@ -35,8 +35,8 @@ async function FindCel(Cel) {//Cel= "549343XXXXXXX@c.us"
 
 ////////////////////////////////////////////////Whatsapp!!
 const { Client, LocalAuth } = require('whatsapp-web.js');
-const qrcode = require('qrcode');
-//const qrcode =require('qrcode-terminal')
+//const qrcode = require('qrcode');
+const qrcode = require('qrcode-terminal')
 const client = new Client();
 client.on('qr', qr => {
   qrcode.generate(qr, { small: true });
@@ -49,7 +49,7 @@ client.initialize();
 
 
 client.on('message', message => {
-  FindCel(message.from)
+  //FindCel(message.from)
   if (!isNaN(message.body)) { message.body = message.body.toString() }
   switch (message.body.toLowerCase().replace(/\s/g, "")) {
     case "1":
@@ -64,6 +64,7 @@ client.on('message', message => {
       */
       client.sendMessage(message.from, "  Muy bién, se contactará contigo a la brevedad nuestro cajero oficial!!.  \n  Muchas gracias por elegirnos.  \n  Por mas información recuerda visitar nuestro sitio web donde publicamos próximos sorteos y promociones en 'https: PROXIMAMENTE'");
       client.sendMessage("5493436222320@c.us", `El número ${message.from}, desea crearse una cuenta nueva`);
+      client.sendMessage("5493434745130@c.us", `El número ${message.from}, desea crearse una cuenta nueva`);
       break;
     case "2":
       client.sendMessage(message.from, 'Necesitas ayuda con tu contraseña?. \n  Escriba la palabra clave SIN COMILLAS de la accion correspondiente.  \n "CAMBIAR": 🔑Cambiar la contraseña  \n "RESET": 🚫No puedo acceder. \n \n "V": 🎲Menú principal.');
@@ -90,8 +91,13 @@ client.on('message', message => {
       client.sendMessage(message.from, ' OTROS !!! \n "V": 🎲Menú principal.');
       break;
     default:
-      client.sendMessage(message.from, "  Bienvenidos a Soporte HORUS  \n  Diganos tu inquietud.  \n  Por favor seleccione con un numero una de las opciones:  \n  1: 🎲Cuenta Nueva  \n  2: 🔑Contraseña.   \n   3: ⚽Apuestas Deportivas.  \n  4: 🚫No puedo acceder.  \n  5: 🔎Problemas en General. \n 6: 🎲Soy Independiente o Distribuidor. \n 7: 🔅Otros.");
-      break;
+      //CONSULTAR Y ENVIAR ESTE MENSAJE SOLO SI ES NUEVO
+      //client.sendMessage(message.from, "  Hola, soy tu amigo BotTPL el bot de soporte, estoy para ayudarte en tu consulta. Recuerda que la atención es unicamente por mensajería");
+      //si ya ha escrito
+      //
+
+      client.sendMessage(message.from, "  ¿Qué lo trae por aquí hoy?.  \n  Simplemente envíame el número de la opción que desea seleccionar.  \n   1: 🎲Cuenta Nueva  \n  2: 🔑Contraseña.   \n  3: 🚫No puedo acceder.  \n  4: 🔎Problemas en General.  \n  5: 🎲Cargas y Retiros. \n  6: ⚽Deportes y Caballos.  \n   7: 🔅Casino.  \n  8: Casino en vivo.  \n    \n   7: 🔅Otros.");
+
   }
 
 });
