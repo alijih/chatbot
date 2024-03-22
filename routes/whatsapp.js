@@ -35,8 +35,8 @@ async function FindCel(Cel) {//Cel= "549343XXXXXXX@c.us"
 
 ////////////////////////////////////////////////Whatsapp!!
 const { Client, LocalAuth } = require('whatsapp-web.js');
-const qrcode = require('qrcode');
-//const qrcode =require('qrcode-terminal')
+//const qrcode = require('qrcode');
+const qrcode =require('qrcode-terminal')
 const client = new Client();
 client.on('qr', qr => {
   qrcode.generate(qr, { small: true });
